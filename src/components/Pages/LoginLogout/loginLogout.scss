@@ -1,0 +1,63 @@
+.form-signin-logo {
+    width: 48px;
+    margin: 0 auto;
+}
+
+.form-signin-title {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.form-signin-main {
+    width: 328px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    margin: 20px auto;
+}
+
+.form-err {
+    color: #dc3545;
+    padding: 3px 10px;
+    font-weight: 500;
+}
+
+.form-signin {
+    width: 330px;
+    font-size: 13px;
+}
+
+.form-signin-item {
+    width: 100%;
+}
+
+.form-signin-item input {
+    width: 100%;
+    font-size: 13px;
+    height: 50px;
+}
+.form-signin-btn {
+    width: 330px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.form-signin-copy {
+    font-size: 12px;
+}
+
+.home-login {
+    width: 400px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    span {
+        font-size: 13px;
+    }
+    h3 {
+        font-size: 18px;
+        padding: 0;
+    }
+}
