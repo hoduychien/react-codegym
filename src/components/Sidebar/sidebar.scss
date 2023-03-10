@@ -10,7 +10,7 @@
     z-index: 99;
     &-wrapper {
         height: 100vh;
-        overflow: scroll;
+        overflow: auto;
         &::-webkit-scrollbar {
             width: 8px;
         }

@@ -18,13 +18,22 @@ const useClock = () => {
     return [time];
 };
 
-const useCounter = () => {
-    const [count, setCount] = useState(0);
+const useCounter = (num) => {
+    const [count, setCount] = useState(num);
 
-    const countUp = () => {
-        setCount(count + 1);
+    const countUp = (num) => {
+        setCount(count + num);
     };
 
     return [count, countUp];
 };
-export { useChangeMe, useClock, useCounter };
+
+const useOpen = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpen = () => {
+        setIsOpen(!isOpen);
+    };
+    return [isOpen, handleOpen];
+};
+export { useChangeMe, useClock, useCounter, useOpen };

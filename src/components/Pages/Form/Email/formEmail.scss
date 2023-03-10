@@ -1,0 +1,73 @@
+.form-email {
+    width: 880px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+    &-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    &-title {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    &-error {
+        font-size: 12px;
+        font-style: italic;
+        color: red;
+    }
+    &-toggle {
+        cursor: pointer;
+        &-icon {
+            font-size: 20px !important;
+        }
+    }
+    &-control {
+        //   width: 100%;
+        margin: 10px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+
+        input,
+        textarea {
+            width: 100%;
+            outline: 0;
+            padding: 8px 0;
+            border: 0;
+        }
+        label {
+            font-weight: 500;
+        }
+    }
+    &-action {
+        padding: 10px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    &-button {
+        padding: 8px 20px;
+        border: 0;
+        background-color: #2f58cd;
+        color: #fff;
+        font-weight: 400;
+        border-radius: 4px;
+        cursor: pointer;
+        &:nth-child(1) {
+            color: #000;
+            transition: all 0.2s linear;
+            background-color: transparent;
+            &:hover {
+                background-color: #efefef;
+                transition: all 0.2s linear;
+            }
+        }
+    }
+}

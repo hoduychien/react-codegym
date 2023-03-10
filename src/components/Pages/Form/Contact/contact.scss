@@ -1,0 +1,87 @@
+.contact {
+    width: 600px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    &-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        &-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-alert {
+            width: 100%;
+            font-size: 13px;
+            font-style: italic;
+            grid-column: 1/3;
+            padding: 6px 10px;
+            border: 0;
+            border-radius: 4px;
+        }
+
+        &-erorr {
+            font-size: 13px;
+            font-style: italic;
+            color: red;
+        }
+        &-title {
+            font-weight: 500;
+            font-size: 20px;
+        }
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            &:first-child,
+            &:nth-child(4),
+            &:nth-child(5) {
+                grid-column: 1/3;
+            }
+            textarea {
+                resize: none;
+                outline: 0;
+                padding: 8px;
+                border-radius: 2px;
+                border: 1px solid #ccc;
+            }
+            input {
+                outline: 0;
+                padding: 8px;
+                border-radius: 2px;
+                border: 1px solid #ccc;
+            }
+            label {
+                font-weight: 400;
+                margin-bottom: 2px;
+            }
+            &-erorr {
+                input,
+                textarea {
+                    border: 1px solid red;
+                }
+            }
+        }
+        &-text {
+            grid-column: 1/3;
+        }
+        &-action {
+            grid-column: 1/3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        &-button {
+            width: 100%;
+            padding: 8px;
+            border: 0;
+            border-radius: 2px;
+            font-size: 14px;
+        }
+    }
+}

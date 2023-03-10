@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import WebhookIcon from '@mui/icons-material/Webhook';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
 const Sidebar = () => {
-    const [isOpen, setIsOpen] = useState(true);
-    const click = () => {
-        setIsOpen(!isOpen);
-    };
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenHook, setIsOpenHook] = useState(false);
+    const [isOpenForm, setIsOpenForm] = useState(true);
+
     return (
         <div className="sidebar">
             <div className="sidebar-wrapper">
@@ -18,7 +19,7 @@ const Sidebar = () => {
                 <div className="sidebar-menu">
                     <ul className="sidebar-list">
                         <li className="sidebar-list-item">
-                            <div className="sidebar-list-item-content" onClick={click}>
+                            <div className="sidebar-list-item-content" onClick={() => setIsOpen(!isOpen)}>
                                 <WidgetsIcon className="sidebar-list-item-icon" />
                                 <span>State & Lifecycle method</span>
                                 <ExpandMoreIcon className="sidebar-list-item-icon" />
@@ -43,12 +44,12 @@ const Sidebar = () => {
                         </li>
 
                         <li className="sidebar-list-item">
-                            <div className="sidebar-list-item-content" onClick={click}>
+                            <div className="sidebar-list-item-content" onClick={() => setIsOpenHook(!isOpenHook)}>
                                 <WebhookIcon className="sidebar-list-item-icon" />
                                 <span>Hook - React Hooks</span>
                                 <ExpandMoreIcon className="sidebar-list-item-icon" />
                             </div>
-                            <ul className={isOpen ? 'sidebar-list-submenu active-submenu' : 'sidebar-list-submenu'}>
+                            <ul className={isOpenHook ? 'sidebar-list-submenu active-submenu' : 'sidebar-list-submenu'}>
                                 <Link to="/practice-hook-1">
                                     <li className="sidebar-list-submenu-item">Practice - 1</li>
                                 </Link>
@@ -66,6 +67,36 @@ const Sidebar = () => {
                                 </Link>
                                 <Link to="/counter">
                                     <li className="sidebar-list-submenu-item">Couter custom hook</li>
+                                </Link>
+                            </ul>
+                        </li>
+                        <li className="sidebar-list-item">
+                            <div className="sidebar-list-item-content" onClick={() => setIsOpenForm(!isOpenForm)}>
+                                <FileCopyIcon className="sidebar-list-item-icon" />
+                                <span>Form - React Form</span>
+                                <ExpandMoreIcon className="sidebar-list-item-icon" />
+                            </div>
+                            <ul className={isOpenForm ? 'sidebar-list-submenu active-submenu' : 'sidebar-list-submenu'}>
+                                <Link to="/form-practice-1">
+                                    <li className="sidebar-list-submenu-item">Practice - Sign In</li>
+                                </Link>
+                                <Link to="/form-practice-3">
+                                    <li className="sidebar-list-submenu-item">Practice - Login</li>
+                                </Link>
+                                <Link to="/form-practice-4">
+                                    <li className="sidebar-list-submenu-item">Practice - Login - Formik</li>
+                                </Link>
+                                <Link to="/contact-form">
+                                    <li className="sidebar-list-submenu-item">React Form - Contact form</li>
+                                </Link>
+                                <Link to="/book-manager">
+                                    <li className="sidebar-list-submenu-item">Book Management</li>
+                                </Link>
+                                <Link to="/form-email">
+                                    <li className="sidebar-list-submenu-item">Form Email</li>
+                                </Link>
+                                <Link to="/form-medical">
+                                    <li className="sidebar-list-submenu-item">Medical Form</li>
                                 </Link>
                             </ul>
                         </li>

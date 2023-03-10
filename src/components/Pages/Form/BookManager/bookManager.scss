@@ -1,0 +1,91 @@
+.book_manager {
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    .pending {
+        border-radius: 100px;
+        font-weight: 400;
+        color: #fff;
+        text-transform: capitalize;
+        background-color: #8393bb;
+        display: inline-block;
+        padding: 4px 10px;
+        cursor: pointer;
+    }
+    .paid {
+        padding: 4px 10px;
+        cursor: pointer;
+        border-radius: 100px;
+        font-weight: 400;
+        color: #fff;
+        text-transform: capitalize;
+        display: inline-block;
+        background-color: #24cc8d;
+    }
+
+    .rejected {
+        padding: 4px 10px;
+        cursor: pointer;
+        border-radius: 100px;
+        font-weight: 400;
+        color: #fff;
+        background-color: #ff4345;
+        display: inline-block;
+        text-transform: capitalize;
+    }
+    &-heading {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            font-weight: 500;
+            font-size: 18px;
+            color: #6d6aa7;
+            margin: 0;
+        }
+    }
+    &-icon {
+        font-size: 20px !important;
+        color: #0000008d;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    &-button {
+        cursor: pointer;
+        padding: 5px 20px;
+        border: 100px;
+        font-weight: 500;
+        border-radius: 100px;
+        border: 2px solid #ccc;
+        &-create {
+            background-color: #eefff9;
+            border: 2px solid #70c6a9;
+            color: #70c6a9;
+        }
+    }
+
+    &-table {
+        width: 100%;
+        td {
+            text-align: center;
+            padding: 14px;
+        }
+        th {
+            background-color: #efefff;
+            color: #6d6aa7;
+            text-align: center;
+            padding: 14px;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+        tr:nth-child(odd) {
+            background-color: #fafafe;
+        }
+    }
+}

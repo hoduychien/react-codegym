@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Alert } from '@mui/material';
 
 const Timer = () => {
     const [time, setTime] = useState(10);
@@ -8,13 +7,12 @@ const Timer = () => {
             alert(`Time's up`);
             return;
         }
-
-        const intervalId = setInterval(() => {
+        const funInterval = setInterval(() => {
             setTime(time - 1);
         }, 1000);
 
         return () => {
-            clearInterval(intervalId);
+            clearInterval(funInterval);
         };
     }, [time]);
     return (
