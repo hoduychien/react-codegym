@@ -1,0 +1,98 @@
+.router {
+    &-form {
+        width: 330px;
+        background-color: #fff;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 40px auto;
+        h3 {
+            font-size: 23px;
+            padding: 10px 0;
+        }
+        &-control {
+            input {
+                width: 100%;
+                padding: 6px;
+                border: 1px solid #ccc;
+                outline: 0;
+                margin: 4px 0;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+            label {
+                font-weight: 400;
+            }
+            span {
+                color: red;
+                font-style: italic;
+            }
+
+            &-error {
+                input {
+                    border: 1px solid red;
+                }
+            }
+        }
+        &-button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4242ed;
+            color: #fff;
+            border: 0;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 14px;
+        }
+    }
+
+    &-icon {
+        font-size: 18px !important;
+        cursor: pointer;
+        color: #535353;
+        margin-right: 10px;
+    }
+
+    &-home {
+        width: 50%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        margin: 20px auto;
+        table {
+            width: 100%;
+            th {
+                font-weight: 500;
+            }
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 15px;
+            justify-content: space-between;
+            button {
+                border: 0;
+                outline: 0;
+                padding: 4px;
+                font-size: 13px;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.emplyeeDetail {
+    width: 300px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}

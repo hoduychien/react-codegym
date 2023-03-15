@@ -9,6 +9,7 @@ const MedicalForm = () => {
     const [districts, setDistricts] = useState([]);
     const [wards, setWards] = useState([]);
     const [address, setAddress] = useState({});
+
     const host = 'https://provinces.open-api.vn/api/';
 
     useEffect(() => {
@@ -21,26 +22,26 @@ const MedicalForm = () => {
     }, []);
 
     const onChangeLocation = async (event) => {
-        console.log(event.target.label);
         const newAddress = { ...address };
         switch (event.target.name) {
             case 'province':
+                newAddress.province = provinces.find((i) => i.code == event.target.value).name;
                 const resDistrict = await axios.get(`${host}p/${event.target.value}?depth=2`);
                 const district = resDistrict.data;
                 setDistricts(district.districts);
-                newAddress.province = event.target.value;
-
                 break;
+
             case 'district':
                 const resWard = await axios.get(`${host}d/${event.target.value}?depth=2`);
-                console.log(event.target.value);
                 const ward = resWard.data;
                 setWards(ward.wards);
-                newAddress.district = event.target.value;
+                newAddress.district = districts.find((i) => i.code == event.target.value).name;
+
                 break;
 
             case 'ward':
-                newAddress.ward = event.target.value;
+                newAddress.ward = wards.find((i) => i.code == event.target.value).name;
+
                 break;
             default:
                 break;
@@ -50,28 +51,24 @@ const MedicalForm = () => {
 
     const formik = useFormik({
         initialValues: {
-            fullname: '',
-            passport: '',
-            birthday: '',
+            fullname: 'Chiến Duy',
+            passport: '123456789',
+            birthday: '07/06/2000',
             gender: 'male',
-            nationality: '',
-            company: '',
-            position: '',
+            nationality: 'Việt Nam',
+            company: 'CodeGym',
+            position: 'Học viên',
             insurance: false,
             address: address,
-            phone: '',
-            email: '',
+            phone: '0762766682',
+            email: 'chienhoo20@gmail.com',
             status: [],
         },
         validationSchema: Validate,
 
-        handleChange: (e) => {
-            console.log(e.target.value);
-        },
-
         onSubmit: (values) => {
             values.address = address;
-            console.log(values);
+            alert(JSON.stringify(values));
         },
     });
 

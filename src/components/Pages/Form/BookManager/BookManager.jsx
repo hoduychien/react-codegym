@@ -20,12 +20,15 @@ const BookManager = () => {
     };
 
     const setBookstoProps = (data) => {
-        const newbook = books.filter((i) => i.title == data.title);
+        setBooks([...books, data]);
+    };
+
+    const checkBook = (book) => {
+        const newbook = books.filter((i) => i.title == book.title);
         if (newbook.length > 0) {
-            alert('Email already exists in the system !');
-            return;
+            return true;
         } else {
-            setBooks([...books, data]);
+            return false;
         }
     };
     const handledDeleteBook = (booktitle) => {
@@ -66,7 +69,12 @@ const BookManager = () => {
     return (
         <div className="container">
             <div className="book_manager">
-                <CreateBook open={isOpen} handleOpen={handleOpen} setBookstoProps={setBookstoProps} />
+                <CreateBook
+                    open={isOpen}
+                    handleOpen={handleOpen}
+                    checkBook={checkBook}
+                    setBookstoProps={setBookstoProps}
+                />
                 {isOpenEditModal && (
                     <EditBook
                         isOpenEditModal={isOpenEditModal}

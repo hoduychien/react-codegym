@@ -152,3 +152,11 @@
     height: auto;
     transition-duration: 300ms;
 }
+
+.active-submenu-item {
+    font-weight: 500;
+    li {
+        transition: all 0.2s linear;
+        background-color: #1e293a;
+    }
+}

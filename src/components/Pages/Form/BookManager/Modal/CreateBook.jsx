@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal } from '@mui/material';
 import './createBook.scss';
 import CloseIcon from '@mui/icons-material/Close';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import Swal from 'sweetalert2';
+import validate from './validate';
 
 const CreateBook = (props) => {
     const formik = useFormik({
@@ -18,16 +17,16 @@ const CreateBook = (props) => {
             image: '',
             desc: '',
         },
-        validationSchema: Yup.object({
-            title: Yup.string()
-                .max(50, `Your first name must be under 50 characters !`)
-                .required('You must fill in this section !'),
+        validationSchema: validate,
 
-            author: Yup.string().required('You must fill in this section !'),
-            price: Yup.string().required('You must fill in this section !'),
-            quantity: Yup.string().required('You must fill in this section !'),
-            desc: Yup.string().required('You must fill in this section !'),
-        }),
+        validate: (values) => {
+            const errors = {};
+            if (props.checkBook(values)) {
+                errors.title = 'This book is already in the system !!';
+            }
+            return errors;
+        },
+
         onSubmit: async (values) => {
             values.date = new Date().toLocaleTimeString();
             formik.resetForm();

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Modal } from '@mui/material';
 import './createBook.scss';
 import CloseIcon from '@mui/icons-material/Close';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import validate from './validate';
 
 const EditBook = (props) => {
     const [bookEdit, setBookEdit] = useState({});
@@ -18,16 +19,7 @@ const EditBook = (props) => {
             image: props.bookEdit.image,
             desc: props.bookEdit.desc,
         },
-        validationSchema: Yup.object({
-            title: Yup.string()
-                .max(50, `Your first name must be under 50 characters !`)
-                .required('You must fill in this section !'),
-
-            author: Yup.string().required('You must fill in this section !'),
-            price: Yup.string().required('You must fill in this section !'),
-            quantity: Yup.string().required('You must fill in this section !'),
-            desc: Yup.string().required('You must fill in this section !'),
-        }),
+        validationSchema: validate,
         onSubmit: async (values) => {
             values.date = new Date().toLocaleTimeString();
             setBookEdit(values);

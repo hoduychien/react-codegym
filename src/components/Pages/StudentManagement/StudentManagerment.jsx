@@ -50,7 +50,6 @@ const StudentManagerment = () => {
             });
 
             setStudent(newArr);
-        } else {
         }
     };
     const handleUpdate = (student) => {
@@ -135,7 +134,7 @@ const StudentManagerment = () => {
                                         Update
                                     </div>
                                     <div className="manager-form-button" onClick={() => handleCancleUpdate()}>
-                                        Cancle
+                                        Cancel
                                     </div>
                                 </div>
                             )}
