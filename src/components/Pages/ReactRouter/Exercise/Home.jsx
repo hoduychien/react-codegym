@@ -9,7 +9,6 @@ const Home = () => {
     const { state } = useLocation();
 
     const handleSignOut = () => {
-        let check = true;
         if (window.confirm('You want to sign out!')) {
             navigate('/router-ex-2/sign-in');
         } else {
@@ -18,7 +17,7 @@ const Home = () => {
     };
 
     const hanleViewEmployee = (employee) => {
-        navigate(`/router-ex-2/emplyee/${employee.id}`, { state: { name: employee.name, age: employee.age } });
+        navigate(`/router-ex-2/emplyee/${employee.id}`, { state: employee });
     };
     return (
         <div className="router-home">

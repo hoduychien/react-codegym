@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './sidebar.scss';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import WebhookIcon from '@mui/icons-material/Webhook';
@@ -9,12 +9,14 @@ import RouterIcon from '@mui/icons-material/Router';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import { useLocation } from 'react-router-dom';
+import StorageIcon from '@mui/icons-material/Storage';
 
 const Sidebar = () => {
     let location = useLocation().pathname;
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenHook, setIsOpenHook] = useState(false);
-    const [isOpenForm, setIsOpenForm] = useState(true);
+    const [isOpenForm, setIsOpenForm] = useState(false);
+    const [isOpenRouter, setIsOpenRouter] = useState(true);
 
     return (
         <>
@@ -92,7 +94,6 @@ const Sidebar = () => {
                                             </NavLink>
                                         </ul>
                                     </li>
-
                                     <li className="sidebar-list-item">
                                         <div
                                             className="sidebar-list-item-content"
@@ -287,12 +288,33 @@ const Sidebar = () => {
                                     </li>
 
                                     <li className="sidebar-list-item">
-                                        <div className="sidebar-list-item-content">
+                                        <div
+                                            className="sidebar-list-item-content"
+                                            onClick={() => setIsOpenRouter(!isOpenRouter)}
+                                        >
                                             <RouterIcon className="sidebar-list-item-icon" />
-                                            <span>Form - React Form</span>
+                                            <span>Router - React Router</span>
                                             <ExpandMoreIcon className="sidebar-list-item-icon" />
                                         </div>
-                                        <ul className="sidebar-list-submenu active-submenu">
+                                        <ul
+                                            className={
+                                                isOpenRouter
+                                                    ? 'sidebar-list-submenu active-submenu'
+                                                    : 'sidebar-list-submenu'
+                                            }
+                                        >
+                                            <NavLink
+                                                to="router-paractice-1"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">Paractice router 1</li>
+                                            </NavLink>
                                             <NavLink
                                                 to="router-ex-2"
                                                 className={({ isActive, isPending }) =>
@@ -304,6 +326,28 @@ const Sidebar = () => {
                                                 }
                                             >
                                                 <li className="sidebar-list-submenu-item">React router Login</li>
+                                            </NavLink>
+                                        </ul>
+                                    </li>
+
+                                    <li className="sidebar-list-item">
+                                        <div className="sidebar-list-item-content">
+                                            <StorageIcon className="sidebar-list-item-icon" />
+                                            <span>API Clients</span>
+                                            <ExpandMoreIcon className="sidebar-list-item-icon" />
+                                        </div>
+                                        <ul className="sidebar-list-submenu active-submenu">
+                                            <NavLink
+                                                to="json-server-todolist"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">Todo list</li>
                                             </NavLink>
                                         </ul>
                                     </li>

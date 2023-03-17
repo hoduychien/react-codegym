@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import './routerEx.scss';
 
 const RouterEx2 = () => {

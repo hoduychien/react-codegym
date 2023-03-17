@@ -23,6 +23,8 @@ import RouterEx2 from './components/Pages/ReactRouter/Exercise/RouterEx2';
 import SignIn from './components/Pages/ReactRouter/Exercise/SignIn';
 import Home from './components/Pages/ReactRouter/Exercise/Home';
 import EmployeeDetail from './components/Pages/ReactRouter/Exercise/EmployeeDetail';
+import RouterParactice1 from './components/Pages/ReactRouter/Paractice/RouterParactice1';
+import TodoList from './components/Pages/JsonServer/TodoList/TodoList';
 
 const router = createBrowserRouter([
     {
@@ -103,6 +105,10 @@ const router = createBrowserRouter([
                 element: <MedicalForm />,
             },
             {
+                path: 'router-paractice-1',
+                element: <RouterParactice1 />,
+            },
+            {
                 path: 'router-ex-2',
                 element: <RouterEx2 />,
                 children: [
@@ -124,6 +130,10 @@ const router = createBrowserRouter([
                         element: <EmployeeDetail />,
                     },
                 ],
+            },
+            {
+                path: 'json-server-todolist',
+                element: <TodoList />,
             },
         ],
     },

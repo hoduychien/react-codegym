@@ -9,7 +9,7 @@
     top: 0;
     z-index: 99;
     &-wrapper {
-        height: 100vh;
+        height: calc(100vh - 50px);
         overflow: auto;
         &::-webkit-scrollbar {
             width: 8px;
