@@ -16,7 +16,8 @@ const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenHook, setIsOpenHook] = useState(false);
     const [isOpenForm, setIsOpenForm] = useState(false);
-    const [isOpenRouter, setIsOpenRouter] = useState(true);
+    const [isOpenRouter, setIsOpenRouter] = useState(false);
+    const [isOpenApiClient, setIsOpenApiClient] = useState(false);
 
     return (
         <>
@@ -31,14 +32,19 @@ const Sidebar = () => {
                             <div className="sidebar-menu">
                                 <ul className="sidebar-list">
                                     <li className="sidebar-list-item">
-                                        <div className="sidebar-list-item-content" onClick={() => setIsOpen(!isOpen)}>
+                                        <div
+                                            className="sidebar-list-item-content"
+                                            onClick={() => setIsOpen(!isOpen)}
+                                        >
                                             <WidgetsIcon className="sidebar-list-item-icon" />
                                             <span>State & Lifecycle method</span>
                                             <ExpandMoreIcon className="sidebar-list-item-icon" />
                                         </div>
                                         <ul
                                             className={
-                                                isOpen ? 'sidebar-list-submenu active-submenu' : 'sidebar-list-submenu'
+                                                isOpen
+                                                    ? 'sidebar-list-submenu active-submenu'
+                                                    : 'sidebar-list-submenu'
                                             }
                                         >
                                             <NavLink
@@ -51,7 +57,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Expand/Collapse</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Expand/Collapse
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/calculator"
@@ -63,7 +71,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Calculator</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Calculator
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/login-logout"
@@ -75,10 +85,14 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Login/Logout</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Login/Logout
+                                                </li>
                                             </NavLink>
                                             <NavLink to="/todo-app">
-                                                <li className="sidebar-list-submenu-item">Todo App</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Todo App
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/student-managemen"
@@ -90,7 +104,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Student Management</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Student Management
+                                                </li>
                                             </NavLink>
                                         </ul>
                                     </li>
@@ -120,7 +136,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Practice - 1</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Practice - 1
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/practice-hook-2"
@@ -132,7 +150,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Practice - 2</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Practice - 2
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/practice-hook-3"
@@ -144,7 +164,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Practice - 3</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Practice - 3
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/car-selection"
@@ -156,7 +178,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Car Selection</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Car Selection
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/timer"
@@ -168,7 +192,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Timer - useEffect</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Timer - useEffect
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/counter"
@@ -180,7 +206,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Couter custom hook</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Couter custom hook
+                                                </li>
                                             </NavLink>
                                         </ul>
                                     </li>
@@ -210,7 +238,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Practice - Sign In</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Practice - Sign In
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/form-practice-3"
@@ -222,7 +252,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Practice - Login</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Practice - Login
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/form-practice-4"
@@ -234,7 +266,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Practice - Login - Formik</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Practice - Login - Formik
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/contact-form"
@@ -246,7 +280,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">React Form - Contact form</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    React Form - Contact form
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/book-manager"
@@ -258,7 +294,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Book Management</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Book Management
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/form-email"
@@ -270,7 +308,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Form Email</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Form Email
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="/form-medical"
@@ -282,7 +322,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Medical Form</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Medical Form
+                                                </li>
                                             </NavLink>
                                         </ul>
                                     </li>
@@ -313,7 +355,9 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Paractice router 1</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Paractice router 1
+                                                </li>
                                             </NavLink>
                                             <NavLink
                                                 to="router-ex-2"
@@ -325,18 +369,29 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">React router Login</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    React router Login
+                                                </li>
                                             </NavLink>
                                         </ul>
                                     </li>
 
                                     <li className="sidebar-list-item">
-                                        <div className="sidebar-list-item-content">
+                                        <div
+                                            className="sidebar-list-item-content"
+                                            onClick={() => setIsOpenApiClient(!isOpenApiClient)}
+                                        >
                                             <StorageIcon className="sidebar-list-item-icon" />
                                             <span>API Clients</span>
                                             <ExpandMoreIcon className="sidebar-list-item-icon" />
                                         </div>
-                                        <ul className="sidebar-list-submenu active-submenu">
+                                        <ul
+                                            className={
+                                                isOpenApiClient
+                                                    ? 'sidebar-list-submenu active-submenu'
+                                                    : 'sidebar-list-submenu'
+                                            }
+                                        >
                                             <NavLink
                                                 to="json-server-todolist"
                                                 className={({ isActive, isPending }) =>
@@ -347,7 +402,131 @@ const Sidebar = () => {
                                                         : ''
                                                 }
                                             >
-                                                <li className="sidebar-list-submenu-item">Todo list</li>
+                                                <li className="sidebar-list-submenu-item">
+                                                    Todo List
+                                                </li>
+                                            </NavLink>
+                                            <NavLink
+                                                to="json-server-books"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">
+                                                    Books Management
+                                                </li>
+                                            </NavLink>
+
+                                            <NavLink
+                                                to="manage-contacts"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">
+                                                    Contacts Management
+                                                </li>
+                                            </NavLink>
+
+                                            <NavLink
+                                                to="users-manager"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">
+                                                    Users Management
+                                                </li>
+                                            </NavLink>
+                                        </ul>
+                                    </li>
+
+                                    <li className="sidebar-list-item">
+                                        <div className="sidebar-list-item-content">
+                                            <StorageIcon className="sidebar-list-item-icon" />
+                                            <span>React - Redux</span>
+                                            <ExpandMoreIcon className="sidebar-list-item-icon" />
+                                        </div>
+                                        <ul className="sidebar-list-submenu active-submenu">
+                                            <NavLink
+                                                to="react-redux-couter"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">
+                                                    Couter - redux
+                                                </li>
+                                            </NavLink>
+                                            <NavLink
+                                                to="react-redux-todo-app"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">
+                                                    Todo App - redux
+                                                </li>
+                                            </NavLink>
+                                            <NavLink
+                                                to="/e-commerce"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">
+                                                    Shopping Cart - redux
+                                                </li>
+                                            </NavLink>
+                                            <NavLink
+                                                to="/react-redux-user-manager/login"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">
+                                                    User Manager - redux-saga
+                                                </li>
+                                            </NavLink>
+                                            <NavLink
+                                                to="/redux-blog"
+                                                className={({ isActive, isPending }) =>
+                                                    isPending
+                                                        ? 'pending-submenu-item'
+                                                        : isActive
+                                                        ? 'active-submenu-item'
+                                                        : ''
+                                                }
+                                            >
+                                                <li className="sidebar-list-submenu-item">Blogs</li>
                                             </NavLink>
                                         </ul>
                                     </li>

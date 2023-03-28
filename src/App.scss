@@ -21,11 +21,33 @@ video {
 textarea {
     resize: none;
 }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+input,
+textarea {
+    &:disabled {
+        background-color: transparent;
+    }
+}
 body {
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 400;
+}
+input[type='file'] {
+    display: none;
 }
 
 .App {

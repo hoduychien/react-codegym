@@ -1,0 +1,92 @@
+.shopping-cart {
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    width: 100%;
+
+    &-title {
+        padding: 0 20px;
+        padding-bottom: 20px;
+    }
+
+    &-action {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &-button {
+            width: 40px !important;
+            background-color: #6d6aa7 !important;
+        }
+    }
+    table {
+        width: 100%;
+        background-color: #fff;
+        img {
+            margin: 0 auto;
+            width: 100px;
+        }
+        button {
+            padding: 4px;
+            width: 80px;
+            background-color: #ea5455;
+            border: 0;
+            border-radius: 100px;
+            color: #fff;
+        }
+        td {
+            text-align: center;
+            padding: 14px;
+            position: relative;
+        }
+        th {
+            background-color: #efefff;
+            color: #6d6aa7;
+            text-align: center;
+            padding: 14px;
+            font-weight: 600;
+        }
+    }
+    &-checkout {
+        padding: 20px;
+        margin-top: 10px;
+        width: 100%;
+        border-top: 1px solid #ccc;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &-total {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    &-button {
+        padding: 10px 20px;
+        border: 0;
+        border-radius: 100px;
+        background-color: #0071e3;
+        color: #fff;
+        transition: all 0.2s linear;
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+            background-color: #0363c3;
+            transition: all 0.2s linear;
+        }
+
+        &-disable {
+            padding: 10px 20px;
+            border: 0;
+            border-radius: 100px;
+            background-color: #0071e3;
+            color: #fff;
+            transition: all 0.2s linear;
+            font-weight: 500;
+            cursor: not-allowed !important;
+            background-color: #a1c1e1;
+        }
+    }
+}

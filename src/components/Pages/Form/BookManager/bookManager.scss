@@ -5,6 +5,17 @@
     margin-top: 15px;
     border-radius: 10px;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+
+    &-pagination {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 14px;
+    }
     .pending {
         border-radius: 100px;
         font-weight: 400;
@@ -56,20 +67,34 @@
     }
     &-button {
         cursor: pointer;
-        padding: 5px 20px;
+        padding: 3px 15px;
         border: 100px;
         font-weight: 500;
         border-radius: 100px;
         border: 2px solid #ccc;
+        margin: 0 4px;
         &-create {
             background-color: #eefff9;
             border: 2px solid #70c6a9;
             color: #70c6a9;
         }
+        &-edit {
+            background-color: #f7c04a12;
+            border: 2px solid #f7c04a;
+            border-radius: 10px;
+            color: #f7c04a;
+        }
+        &-delete {
+            background-color: #df2e3714;
+            border: 2px solid #df2e38;
+            color: #df2e38;
+            border-radius: 10px;
+        }
     }
 
     &-table {
         width: 100%;
+
         td {
             text-align: center;
             padding: 14px;

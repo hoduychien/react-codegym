@@ -25,6 +25,23 @@ import Home from './components/Pages/ReactRouter/Exercise/Home';
 import EmployeeDetail from './components/Pages/ReactRouter/Exercise/EmployeeDetail';
 import RouterParactice1 from './components/Pages/ReactRouter/Paractice/RouterParactice1';
 import TodoList from './components/Pages/JsonServer/TodoList/TodoList';
+import Books from './components/Pages/JsonServer/Book/Books';
+import ManageContacts from './components/Pages/JsonServer/ManageContacts/ManageContacts';
+import ContactLists from './components/Pages/JsonServer/ManageContacts/ContactLists';
+import ContactDetail from './components/Pages/JsonServer/ManageContacts/ContactDetail';
+import ContactCreate from './components/Pages/JsonServer/ManageContacts/ContactCreate';
+import UserManager from './components/Pages/JsonServer/UserManage/UserManager';
+import ReduxCouter from './components/Pages/ReactRedux/Couter/ReduxCouter';
+import TodoAppRedux from './components/Pages/ReactRedux/TodoApp/TodoApp';
+import ShoppingCart from './components/Pages/ReactRedux/ShoppingCart/ShoppingCart';
+import Ecommerce from './components/Pages/ReactRedux/ShoppingCart/Ecommerce';
+import Products from './components/Pages/ReactRedux/ShoppingCart/Products';
+import UserReduxSaga from './components/Pages/ReactRedux/UserReduxSaga/UserReduxSaga';
+import Login from './components/Pages/ReactRedux/UserReduxSaga/Login';
+import UserList from './components/Pages/ReactRedux/UserReduxSaga/UserList';
+import BlogHome from './components/Pages/ReactRedux/Blog/Home';
+import PostDetail from './components/Pages/ReactRedux/Blog/PostDetail';
+import Posts from './components/Pages/ReactRedux/Blog/Posts';
 
 const router = createBrowserRouter([
     {
@@ -134,6 +151,84 @@ const router = createBrowserRouter([
             {
                 path: 'json-server-todolist',
                 element: <TodoList />,
+            },
+            {
+                path: 'json-server-books',
+                element: <Books />,
+            },
+            {
+                path: 'manage-contacts',
+                element: <ManageContacts />,
+                children: [
+                    {
+                        path: '',
+                        element: <ContactLists />,
+                    },
+                    {
+                        path: 'contact/:id',
+                        element: <ContactDetail />,
+                    },
+                    {
+                        path: 'create-contact',
+                        element: <ContactCreate />,
+                    },
+                ],
+            },
+
+            {
+                path: 'users-manager',
+                element: <UserManager />,
+            },
+
+            {
+                path: 'react-redux-couter',
+                element: <ReduxCouter />,
+            },
+            {
+                path: 'react-redux-todo-app',
+                element: <TodoAppRedux />,
+            },
+            {
+                path: 'e-commerce',
+                element: <Ecommerce />,
+                children: [
+                    {
+                        path: 'products',
+                        element: <Products />,
+                    },
+                    {
+                        path: 'checkout',
+                        element: <ShoppingCart />,
+                    },
+                ],
+            },
+            {
+                path: 'react-redux-user-manager',
+                element: <UserReduxSaga />,
+                children: [
+                    {
+                        path: 'login',
+                        element: <Login />,
+                    },
+                    {
+                        path: 'users',
+                        element: <UserList />,
+                    },
+                ],
+            },
+            {
+                path: 'redux-blog',
+                element: <BlogHome />,
+                children: [
+                    {
+                        path: '',
+                        element: <Posts />,
+                    },
+                    {
+                        path: 'post/:id',
+                        element: <PostDetail />,
+                    },
+                ],
             },
         ],
     },
